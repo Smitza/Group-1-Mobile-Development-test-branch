@@ -1,0 +1,37 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<ion-content>
+<swiper-container class="main-swiper">
+  <swiper-slide class="slide-1">
+    <div class="slide-content">
+      <h1>Welcome to CineSnips!</h1>
+      <h3>Guess the movie soundtrack and test your knowledge</h3>
+    </div>
+    <ion-button expand="block" class="next-button"(click)="nextSlide()" >Next</ion-button>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="slide-content">
+      <h1>Slide 2</h1>
+      <h3>Discover more features!</h3>
+    </div>
+    <ion-button expand="block" class="next-button" (click)="nextSlide()">Next</ion-button>
+  </swiper-slide>
+  <swiper-slide>
+    <div class="slide-content">
+      <h1>Slide 3</h1>
+      <h3>Get started!</h3>
+    </div>
+    <div class="button-group">
+        <ion-button routerLink="/login" class="small-button">Login</ion-button>
+        <ion-button routerLink="/signup" class="small-button">Sign Up</ion-button>
+    </div>
+  </swiper-slide>
+</swiper-container>
+
+</ion-content>
+
+
+
+

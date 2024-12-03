@@ -1,0 +1,79 @@
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+
+
+  .main-swiper{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .slide-1{
+    background-image: url("https://i.ibb.co/CJMVP8D/cine-phone.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .slide-content{
+    position: absolute;
+    top: 63%;
+    text-align: left;
+
+    h1 {
+        padding-left: 0.5rem;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        padding-left: 0.5rem;
+        color: #dfdfdf;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+  }
+
+
+
+
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+
+  .next-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; 
+
+    
+  }
+
+  .button-group {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .small-button {
+      width: 40%; /* Smaller button width */
+      font-size: 0.9rem; /* Adjust font size */
+      --border-radius: 20px; /* Rounded corners */
+      --background: #10dc60; /* Green background for Login */
+    }
+
+    .small-button:nth-child(2) {
+      --background: #488aff; /* Blue background for Sign Up */
+    }
+}
