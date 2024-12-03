@@ -6,12 +6,9 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./welcome.page.scss'],
 })
 export class WelcomePage {
-  @ViewChild('swiper') swiper: any;
   
-  nextSlide() {
-    if (this.swiper) {
-      this.swiper.swiperRef.slideNext();
-    }
-  }
-
+  constructor() {}
 }
+
+
+

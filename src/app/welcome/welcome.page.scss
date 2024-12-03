@@ -12,42 +12,51 @@ body {
     text-align: center;
   }
 
+
+  .slide-img{
+    padding-top: 5.5rem;
+  }
+
   .slide-1{
-    background-image: url("https://i.ibb.co/CJMVP8D/cine-phone.jpg") ;
+    background-image: url("https://i.ibb.co/3dbSwVj/slide-1bg.jpg") ;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 
   .slide-2{
-    background-image: url("https://s13.gifyu.com/images/SGefP.gif") ;
+    background-image: url("https://i.ibb.co/xjcx6XT/slide-2bg.png"), url("https://i.ibb.co/pdBHN7y/ezgif-com-overlay.gif") ;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: cover;
   }
 
-  .slide-2:after{
-    background: linear-gradient(to bottom, transparent 0%, black 100%);
+  .slide-3{
+    background-image: url("https://i.ibb.co/tY158X6/slide-3bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
 
   .slide-content{
     position: absolute;
-    top: 63%;
-    text-align: left;
+    top: 57%;
 
     h1 {
         padding-left: 0.5rem;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
+        font-size: 1.9rem;
+        padding-bottom: 10px;
       }
   
       h3 {
+        text-align: left;
         padding-left: 0.5rem;
         color: #dfdfdf;
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: 20px;
       }
   }
@@ -91,4 +100,9 @@ body {
     .small-button:nth-child(2) {
       --background: #488aff; /* Blue background for Sign Up */
     }
+}
+
+
+--swiper-pagination-bullet-inactive-color {
+  color:#ff2253;
 }
