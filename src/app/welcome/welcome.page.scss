@@ -20,6 +20,19 @@ body {
     background-size: cover;
   }
 
+  .slide-2{
+    background-image: url("https://s13.gifyu.com/images/SGefP.gif") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+  .slide-2:after{
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
+  }
+  
+
   .slide-content{
     position: absolute;
     top: 63%;
@@ -41,7 +54,6 @@ body {
 
 
 
-
   .roboto-medium {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -55,8 +67,11 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 80%; 
-
-    
+    background: white;
+    --background: white;
+    --background-activated: white;
+    --background-focused: white;
+    color: #ff2253;
   }
 
   .button-group {
