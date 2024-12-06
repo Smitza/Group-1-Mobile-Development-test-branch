@@ -9,6 +9,10 @@ const routes: Routes = [
   { path: 'game', loadChildren: () => import('./game/game.module').then(m => m.GamePageModule) },
   { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule) },
   { path: 'score', loadChildren: () => import('./score/score.module').then(m => m.ScorePageModule) },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
 ];
 
 @NgModule({

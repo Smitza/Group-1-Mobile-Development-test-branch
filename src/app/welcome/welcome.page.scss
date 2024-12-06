@@ -102,7 +102,7 @@ body {
     }
 }
 
-
---swiper-pagination-bullet-inactive-color {
-  color:#ff2253;
+swiper-container{
+  --swiper-theme-color: #fff;
+  --swiper-pagination-bullet-inactive-color: #fff;
 }
