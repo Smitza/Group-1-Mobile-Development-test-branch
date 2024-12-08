@@ -1,13 +1,24 @@
-<ion-content>
-  <ion-header [translucent]="true">
-    <ion-toolbar class="ion-text-center">
-      <h1><img src="https://i.ibb.co/MZMjptQ/cinesnips.png" style="height: 5rem"></h1>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding ion-text-center" color="cine">
+  <img src="../../assets/CineLogo.png" class="logo"/>
 
+  <div class="title">
+    <h2>Log In</h2>
+    <p>Log back into your account</p>
+  </div>
 
-  <h2>Login</h2>
-  <ion-input placeholder="Email" type="email"></ion-input>
-  <ion-input placeholder="Password" type="password"></ion-input>
-  <ion-button expand="full" routerLink="/tabs">Log In</ion-button>
+  <div class="ion-margin-top">
+    <ion-input [(ngModel)]="email" class="ion-margin-top cineFields" placeholder="Enter your email" type="email"></ion-input>
+    <p *ngIf="emailError" class="error-text">Please enter a valid email address.</p>
+    <ion-input [(ngModel)]="password" class="ion-margin-top cineFields" placeholder="Enter your password" type="password"></ion-input>
+    <p *ngIf="passwordError" class="error-text">Password must be at least 6 characters long.</p>
+    <ion-button fill="outline" expand="block" class="ion-margin-top custombtn" (click)="validateAndLogin()">Log In</ion-button>
+  </div>
 </ion-content>
+
+<style>
+  .error-text {
+    color: white;
+    margin-left: 16px;
+    font-size: 0.9rem;
+  }
+</style>

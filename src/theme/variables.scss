@@ -1,2 +1,20 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+	--ion-color-cine: #ff2253;
+	--ion-color-cine-rgb: 255,34,83;
+	--ion-color-cine-contrast: #000000;
+	--ion-color-cine-contrast-rgb: 0,0,0;
+	--ion-color-cine-shade: #e01e49;
+	--ion-color-cine-tint: #ff3864;
+}
+
+.ion-color-cine {
+	--ion-color-base: var(--ion-color-cine);
+	--ion-color-base-rgb: var(--ion-color-cine-rgb);
+	--ion-color-contrast: var(--ion-color-cine-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-cine-contrast-rgb);
+	--ion-color-shade: var(--ion-color-cine-shade);
+	--ion-color-tint: var(--ion-color-cine-tint);
+}
