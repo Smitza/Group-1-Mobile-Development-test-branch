@@ -4,8 +4,24 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-<h2>Signup</h2>
-  <ion-input placeholder="Email" type="email"></ion-input>
-  <ion-input placeholder="Password" type="password"></ion-input>
-  <ion-button expand="full" routerLink="/game">Log In</ion-button>
+  <h2>Signup</h2>
+  <ion-item>
+    <ion-input [(ngModel)]="email" placeholder="Enter your email" type="email"></ion-input>
+  </ion-item>
+  <p *ngIf="emailError" class="error-text">Please enter a valid email address.</p>
+
+  <ion-item>
+    <ion-input [(ngModel)]="password" placeholder="Enter your password" type="password"></ion-input>
+  </ion-item>
+  <p *ngIf="passwordError" class="error-text">Password must be at least 6 characters long.</p>
+
+  <ion-button expand="full" (click)="validateAndGo()">Sign In</ion-button>
 </ion-content>
+
+<style>
+  .error-text {
+    color: red;
+    margin-left: 16px;
+    font-size: 0.9rem;
+  }
+</style>
