@@ -1,26 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="ion-text-center">
-    <h1><img src="https://i.ibb.co/MZMjptQ/cinesnips.png" style="height: 5rem"></h1>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
-  <h2>Signup</h2>
-  <ion-item>
-    <ion-input [(ngModel)]="email" placeholder="Enter your email" type="email"></ion-input>
-  </ion-item>
-  <p *ngIf="emailError" class="error-text">Please enter a valid email address.</p>
+<ion-content class="ion-padding ion-text-center" color="cine">
+  <img src="../../assets/CineLogo.png" class="logo"/>
 
-  <ion-item>
-    <ion-input [(ngModel)]="password" placeholder="Enter your password" type="password"></ion-input>
-  </ion-item>
-  <p *ngIf="passwordError" class="error-text">Password must be at least 6 characters long.</p>
+  <div class="title">
+    <h2>Sign-Up</h2>
+    <p>Get started with CineSnips</p>
+  </div>
+  
 
-  <ion-button expand="full" (click)="validateAndGo()">Sign In</ion-button>
+  <div class="ion-margin-top">
+      <ion-input [(ngModel)]="email" class="ion-margin-top cineFields" placeholder="Enter your email" type="email"></ion-input>
+      <p *ngIf="emailError" class="error-text">Please enter a valid email address.</p>
+      <ion-input class="ion-margin-top cineFields" placeholder="Enter your Username"></ion-input>
+      <ion-input class="ion-margin-top cineFields" placeholder="Enter your Phone No." type="tel"></ion-input>
+      <ion-input class="ion-margin-top cineFields" [(ngModel)]="password" placeholder="Enter your password" type="password"></ion-input>
+      <p *ngIf="passwordError" class="error-text">Password must be at least 6 characters long.</p>
+      <ion-button fill="outline" class="ion-margin-top custombtn" expand="block" (click)="validateAndGo()">Sign Up</ion-button>
+  </div>
+
+
 </ion-content>
 
 <style>
   .error-text {
-    color: red;
+    color: white;
     margin-left: 16px;
     font-size: 0.9rem;
   }
