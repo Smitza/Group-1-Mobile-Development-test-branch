@@ -24,6 +24,7 @@ export class ProfilePage implements OnInit {
     'assets/images/profile8.png',
     'assets/images/profile9.png',
     'assets/images/profile10.png',
+    'assets/images/profile11.png',
 
   ];
 
