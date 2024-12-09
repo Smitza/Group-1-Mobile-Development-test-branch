@@ -1,12 +1,26 @@
-ion-card {
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffffcf;
+  }
+  
+  ion-card {
     margin: 16px;
-    padding: 8px;
     text-align: center;
   }
   
   ion-card-title {
     font-size: 24px;
-    color: #3880ff;
+    color: #ff2253;
+    margin-top: 16px;
   }
   
   ion-button {

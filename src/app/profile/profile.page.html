@@ -1,8 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar class="ion-text-center">
-    <h1><img src="https://i.ibb.co/MZMjptQ/cinesnips.png" style="height: 5rem"></h1>
-  </ion-toolbar>
-</ion-header>
 <ion-header>
   <ion-toolbar>
     <ion-title>Profile</ion-title>
@@ -12,6 +7,9 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
+      <div class="profile-image-container">
+        <img [src]="profileImage" alt="Profile Picture" class="profile-image" />
+      </div>
       <ion-card-title>Welcome!</ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -19,6 +17,13 @@
     </ion-card-content>
   </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <p><strong>Current Score:</strong> {{ currentScore }}</p>
+      <p><strong>Last Game Played:</strong> {{ lastGamePlayed }}</p>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-button expand="block" (click)="editProfile()">Edit Profile</ion-button>
+  <ion-button expand="block" color="danger" (click)="logout()">Logout</ion-button>
 </ion-content>
-
