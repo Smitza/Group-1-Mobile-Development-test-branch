@@ -30,44 +30,38 @@ export class ProfilePage implements OnInit {
   private gamesList: string[] = [
     'Easy',
     'Medium',
-    'Hard'
+    'Hard',
+    'Never Played'
   ];
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // Retrieve the email from the query parameters
     this.route.queryParams.subscribe(params => {
       if (params['email']) {
         this.email = params['email'];
       }
     });
 
-    // Randomly select an image, current score, and last game played
     this.randomizeProfileDetails();
   }
 
   randomizeProfileDetails() {
-    // Randomize the profile image
     const randomImageIndex = Math.floor(Math.random() * this.imageList.length);
     this.profileImage = this.imageList[randomImageIndex];
 
-    // Randomize the current score between 0 and 1000
     this.currentScore = Math.floor(Math.random() * 1001);
 
-    // Randomly select the last game played
     const randomGameIndex = Math.floor(Math.random() * this.gamesList.length);
     this.lastGamePlayed = this.gamesList[randomGameIndex];
   }
 
   editProfile() {
     console.log('Edit profile clicked');
-    // Add profile editing logic here
   }
 
   logout() {
     console.log('Logout clicked');
-    // Clear session data and navigate to the login page
     this.router.navigate(['/login']);
   }
 }
