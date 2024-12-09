@@ -14,11 +14,20 @@ export class ProfilePage implements OnInit {
 
 
   private imageList: string[] = [
-
+    'assets/images/profile1.png',
+    'assets/images/profile2.png',
+    'assets/images/profile3.png',
+    'assets/images/profile4.png',
+    'assets/images/profile5.png',
+    'assets/images/profile6.png',
+    'assets/images/profile7.png',
+    'assets/images/profile8.png',
+    'assets/images/profile9.png',
+    'assets/images/profile10.png',
+    'assets/images/profile11.png',
+    'assets/images/profile12.png',
+    'assets/images/profile13.png',
     'assets/images/profile14.png',
-
-
-
   ];
 
   private gamesList: string[] = [
