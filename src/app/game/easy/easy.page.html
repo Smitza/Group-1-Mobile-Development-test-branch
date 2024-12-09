@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="ion-text-center">
+    <h1><img src="https://i.ibb.co/MZMjptQ/cinesnips.png" style="height: 5rem"></h1>
+  </ion-toolbar>
+</ion-header>
+
+<h1>Easy gamemode.</h1>
+
+<ion-button size="large" color="danger"  (click)="playAudio('Jaws.mp3')" >Play song</ion-button> 
+<br>
+<ion-button size="large" color="warning" (click)="stopAudio()">Stop Music</ion-button>
+<br>
+<ion-content>
+  <div style="display: flex; justify-content: center; gap: 10px; padding: 3rem;">
+    <ion-button size="large" (click)="playOneSecond('Jaws.mp3')">Jaws</ion-button>
+    <ion-button size="large" (click)="playOneSecond('starwars.mp3')">Starwars</ion-button>
+    <ion-button size="large"(click)="playOneSecond('godfather.mp3')">Godfather</ion-button>
+  </div>
+</ion-content>
+
