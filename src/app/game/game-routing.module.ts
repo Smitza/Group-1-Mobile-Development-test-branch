@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: GamePage
+  },  {
+    path: 'easy',
+    loadChildren: () => import('./easy/easy.module').then( m => m.EasyPageModule)
   }
+
 ];
 
 @NgModule({
