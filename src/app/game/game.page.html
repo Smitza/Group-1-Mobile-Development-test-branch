@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" color="cine">
-  <ion-card>
+  <ion-card color="success" class="ctm-card">
     <ion-card-header>
       <ion-card-title>Easy Difficulty</ion-card-title>
       <ion-card-subtitle>Get started with an easier difficulty!</ion-card-subtitle>
@@ -14,10 +14,10 @@
     <ion-card-content>
       Easy difficulty includes simpler movie snippets to get started. Click below to start the game!
     </ion-card-content>
-    <ion-button fill="full">Start</ion-button>
+    <ion-button fill="full" routerLink="/game/easy" color="success">Start</ion-button>
   </ion-card>
-  <ion-card>
 
+  <ion-card color="warning" class="ctm-card">
     <ion-card-header>
       <ion-card-title>Medium Difficulty</ion-card-title>
       <ion-card-subtitle>Challenge yourself with moderate difficulty!</ion-card-subtitle>
@@ -29,7 +29,7 @@
     <ion-button fill="full">Start</ion-button>
   </ion-card>
 
-  <ion-card>
+  <ion-card color="danger" class="ctm-card">
     <ion-card-header>
       <ion-card-title>Hard Difficulty</ion-card-title>
       <ion-card-subtitle>Only for the bravest movie enthusiasts!!</ion-card-subtitle>

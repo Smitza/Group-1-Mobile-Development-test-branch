@@ -1,48 +1,78 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-easy',
   templateUrl: './easy.page.html',
   styleUrls: ['./easy.page.scss'],
 })
-export class EasyPage implements OnInit {
-  private audio = new Audio(); // Create an audio object
-  private timeout: any; // Variable to store timeout for stopping audio
+export class EasyPage implements OnInit, OnDestroy {
+  correctAnswer: string = 'Star Wars';
+  selectedAnswer: string = '';
+  isAnswered: boolean = false;
 
-  constructor() {}
+  timerSeconds: number = 5; 
+  totalTime: number = 5;    
+  progress: number = 0;      
+  elapsedSeconds: number = 0; 
+  isPlaying: boolean = false;
+  volume: number = 50;
 
-  ngOnInit() {}
+  timerInterval: any;
+  audio = new Audio('../../assets/sounds/starwars.mp3');
 
-  // Function to play audio
-  playAudio(fileName: string) {
-    this.stopAudio(); // Stop any currently playing audio
-    this.audio.src = `assets/sounds/${fileName}`; // Set the audio file path
-    this.audio.load(); // Load the audio file
-    this.audio.play().catch((error) => {
-      console.error('Error playing audio:', error);
-    });
+  ngOnInit() {
   }
 
-  // Function to play only 1 second of audio
-  playOneSecond(fileName: string) {
-    this.stopAudio(); // Stop any currently playing audio
-    this.audio.src = `assets/sounds/${fileName}`; // Set the audio file path
-    this.audio.load(); // Load the audio file
-    this.audio.currentTime = 0; // Start at the beginning
-    this.audio.play().catch((error) => {
-      console.error('Error playing audio:', error);
-    });
+  constructor(private cdr: ChangeDetectorRef){}
 
-    // Stop audio after 1 second
-    this.timeout = setTimeout(() => {
-      this.stopAudio();
-    }, 1000); // 1000 milliseconds = 1 second
+  selectAnswer(answer: string): void {
+    this.selectedAnswer = answer;
+    this.isAnswered = true;
+  
+    this.cdr.detectChanges();
   }
 
-  // Function to stop audio
-  stopAudio() {
-    this.audio.pause(); // Pause the audio
-    this.audio.currentTime = 0; // Reset the playback position
-    clearTimeout(this.timeout); // Clear any existing timeout
+  isCorrectAnswer(answer: string): boolean {
+    return answer === this.correctAnswer;
   }
+
+  startTimer() {
+    this.timerInterval = setInterval(() => {
+      if (this.elapsedSeconds < this.totalTime) {
+        this.elapsedSeconds++;
+        this.progress = (this.elapsedSeconds / this.totalTime) * 100;
+        this.timerSeconds = this.totalTime - this.elapsedSeconds; 
+      } else {
+        this.stopTimer();
+        this.audio.pause();
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.timerInterval) {
+      clearInterval(this.timerInterval);
+    }
+  }
+
+  toggleAudio() {
+    this.startTimer();
+    if (this.isPlaying) {
+      this.audio.pause();
+    } else {
+      this.audio.play();
+    }
+    this.isPlaying = !this.isPlaying;
+  }
+
+  onVolumeChange(event: any) {
+    this.volume = event.detail.value; 
+    this.audio.volume = this.volume / 100; 
+  }
+
+  ngOnDestroy() {
+    this.stopTimer(); 
+    this.audio.pause();
+  }
+
 }

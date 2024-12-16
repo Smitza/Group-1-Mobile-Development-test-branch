@@ -26,21 +26,23 @@ body {
   }
 
   .slide-2{
-    background-image: url("https://i.ibb.co/xjcx6XT/slide-2bg.png"), url("https://i.ibb.co/pdBHN7y/ezgif-com-overlay.gif") ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    #CineVideo{
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
+ 
 
   .slide-3{
-    background-image: url("https://i.ibb.co/SwzDMG8/slide-3bg.jpg");
+    
+    background-image: url("../../assets/CineSnipsBG.png"), linear-gradient(#f43f5e, #db2777, #ef4444);
     background-repeat: no-repeat;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
 
   .slide-content{
     position: absolute;
@@ -60,6 +62,8 @@ body {
         margin-bottom: 20px;
       }
   }
+
+
 
 
 

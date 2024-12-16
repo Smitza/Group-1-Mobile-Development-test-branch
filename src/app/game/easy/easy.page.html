@@ -1,20 +1,66 @@
 <ion-header [translucent]="true">
   <ion-toolbar class="ion-text-center">
     <h1><img src="https://i.ibb.co/MZMjptQ/cinesnips.png" style="height: 5rem"></h1>
+    <h2>Easy Difficulty</h2>
   </ion-toolbar>
 </ion-header>
 
-<h1>Easy gamemode.</h1>
+<ion-content class="ion-padding" [style.background]="'url(assets/bg-raindrops.png) repeat'">
+  <div class="timer-container">
+    <h1 class="timer-text">
+      <span class="time-number">{{ timerSeconds }}</span><span class="time-unit">s</span>
+    </h1>
+  </div>
 
-<ion-button size="large" color="danger"  (click)="playAudio('Jaws.mp3')" >Play song</ion-button> 
-<br>
-<ion-button size="large" color="warning" (click)="stopAudio()">Stop Music</ion-button>
-<br>
-<ion-content>
-  <div style="display: flex; justify-content: center; gap: 10px; padding: 3rem;">
-    <ion-button size="large" (click)="playOneSecond('Jaws.mp3')">Jaws</ion-button>
-    <ion-button size="large" (click)="playOneSecond('starwars.mp3')">Starwars</ion-button>
-    <ion-button size="large"(click)="playOneSecond('godfather.mp3')">Godfather</ion-button>
+  <ion-range [value]="progress" color="cine" class="progress-bar"></ion-range>
+
+  <div class="audio-controls">
+    <ion-button fill="clear" size="large" color="dark" (click)="toggleAudio()">
+      <ion-icon [name]="isPlaying ? 'pause-circle' : 'play-circle'"></ion-icon>
+    </ion-button>
+
+    <ion-range 
+      [(ngModel)]="volume" 
+      min="0" 
+      max="100" 
+      color="medium" 
+      class="volume-control" 
+      (ionInput)="onVolumeChange($event)">
+    </ion-range>
+    <ion-icon name="volume-high"></ion-icon>
+  </div>
+
+  <div class="options-container">
+    <ion-button 
+      expand="block" 
+      [ngClass]="{'correct': isCorrectAnswer('Jaws'), 'incorrect': selectedAnswer === 'Jaws' && !isCorrectAnswer('Jaws')}" 
+      [disabled]="isAnswered" 
+      (click)="selectAnswer('Jaws')">
+      Jaws
+    </ion-button>
+  
+    <ion-button 
+    expand="block" 
+    [ngClass]="{'correct': isAnswered && isCorrectAnswer('Star Wars'), 'incorrect': isAnswered && selectedAnswer === 'Star Wars' && !isCorrectAnswer('Star Wars')}" 
+    [disabled]="isAnswered" 
+    (click)="selectAnswer('Star Wars')">
+    Star Wars
+  </ion-button>
+  
+    <ion-button 
+      expand="block" 
+      [ngClass]="{'correct': isCorrectAnswer('The GodFather'), 'incorrect': selectedAnswer === 'The GodFather' && !isCorrectAnswer('The GodFather')}" 
+      [disabled]="isAnswered" 
+      (click)="selectAnswer('The GodFather')">
+      The GodFather
+    </ion-button>
+  
+    <ion-button 
+      expand="block" 
+      [ngClass]="{'correct': isCorrectAnswer('The Lord of The Rings'), 'incorrect': selectedAnswer === 'The Lord of The Rings' && !isCorrectAnswer('The Lord of The Rings')}" 
+      [disabled]="isAnswered" 
+      (click)="selectAnswer('The Lord of The Rings')">
+      The Lord of The Rings
+    </ion-button>
   </div>
 </ion-content>
-

@@ -1,0 +1,60 @@
+/* Timer Section */
+.timer-container {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .timer-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff2253;
+  
+    .time-unit {
+      font-size: 1.5rem;
+      color: #555;
+    }
+  }
+  
+  .progress-bar {
+    margin: 15px 0;
+  }
+  
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  
+    ion-icon {
+      font-size: 2rem;
+    }
+  
+    .volume-control {
+      width: 150px;
+    }
+  }
+
+  .options-container ion-button {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    --background:  #1A1A1A;
+    --color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .options-container ion-button.correct {
+    --background: #28a745 !important;
+    --color: white !important;
+  }
+  
+  .options-container ion-button.incorrect {
+    --background: #dc3545 !important;
+    --color: white !important;
+  }
+  .options-container ion-button[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
